@@ -1,0 +1,14 @@
+{
+  "name": "simple-engrish",
+  "version": "0.0.1",
+  "description": "Helper for the Simple Engrish game.",
+  "main": "simple-engrish/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julio Felipe Angelini",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "^4.7.0"
+  }
+}
