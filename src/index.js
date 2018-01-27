@@ -1,20 +1,20 @@
 
+import {Application, utils} from 'pixi.js';  // also brings PIXI into the global scope
+
 let type = "WebGL"
-if(!PIXI.utils.isWebGLSupported()){
+if(!utils.isWebGLSupported()){
   type = "canvas"
 }
 
-let mainContainer = document.createElement("div");
-mainContainer.style.position = "relative";  // Allows for absolute positioning of textarea DOM
-document.body.appendChild(mainContainer);   // elements on top of the PixiJS canvas.
+export let screen = document.createElement("div");
+screen.style.position = "relative";  // Allows for absolute positioning of textarea DOM
+document.body.appendChild(screen);   // elements on top of the PixiJS canvas.
 
 
-let app = new PIXI.Application({width: 800, height: 600});
+export let app = new Application({width: 800, height: 600});
 app.view.style["z-index"] = 0;
 app.view.style.position = "absolute";
-mainContainer.appendChild(app.view);
-
-
+screen.appendChild(app.view);
 
 
 
@@ -30,4 +30,4 @@ mainContainer.appendChild(app.view);
 // textArea.style.padding = "0px";
 // let textNode = document.createTextNode("Test.\ntest.");
 // textArea.appendChild(textNode);
-// mainContainer.appendChild(textArea);
+// screen.appendChild(textArea);
