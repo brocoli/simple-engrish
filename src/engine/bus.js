@@ -1,5 +1,5 @@
 
-import {_} from "lodash"
+import lodash from "lodash"
 
 
 export default class Bus {
@@ -31,9 +31,9 @@ export default class Bus {
 
             this.listeners[signal].get(object).delete(listener)
 
-            if (_.isEmpty(this.listeners[signal].get(object))) {
+            if (lodash.isEmpty(this.listeners[signal].get(object))) {
                 this.listeners[signal].delete(object)
-                if (_.isEmpty(this.listeners[signal])) {
+                if (lodash.isEmpty(this.listeners[signal])) {
                     delete this.listeners[signal]
                 }
             }

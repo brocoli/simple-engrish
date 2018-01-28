@@ -27,5 +27,16 @@ export default class Maestro {
         this.bus.subscribe(this, {"myDude/myGal": this.myGal})
         this.bus.post("myDude", "something!?")
         this.bus.post("myDude/myGal", "something!!!")
+        this.bus.unsubscribe(this, {"myDude": this.myDude})
+        this.bus.post("myDude", "something...")
+        this.bus.post("myDude/myGal", "something???")
+    }
+
+    myDude(signal, something) {
+        console.log("myDude called. " + signal + " " + something)
+    }
+
+    myGal(signal, something) {
+        console.log("myGal called. " + signal + " " + something)
     }
 }
