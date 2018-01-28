@@ -1,0 +1,62 @@
+Original: https://docs.google.com/document/d/17Ct5ouYdv54MjANi9KOBLhbi0aL7VCNcLeuiDV8pt4I/edit?usp=sharing
+
+
+
+Translation Corruption Games
+These games can be played with a group of friends with something as simple as a browser and a chat application. Enjoy =)
+
+
+Feeds of the Internet are Usually Birdcraft (old version)
+Introduction
+
+This game is about how information transmission works when there are multiple imperfect steps in the way.
+Or rather, it's about how it doesn't ;p.
+
+The source player will choose a text from the Simple English Wikipedia, mash it up with translations and deliver it to the receiving players. These must then find the original article using only the Simple English Wikipedia in a time limit.
+Game Manual
+Setup
+Gather at least 3 players, each with its own screen (computer, mobile device, etc…).
+Players will take rounds being the Source. Other players in a round are Receivers.
+Guessing
+The Source chooses a Simple English Wikipedia article, and garble it by successively translating it in Google Translate with the following "recipe":
+	English -> Arabic -> Fillipino -> Igbo -> Swahili -> English
+This can be done easily by opening 5 tabs in a browser with each translation configured, then copy and pasting the text successively.
+The source sends the garbled text to all Receivers.
+Receivers have 5 minutes to find the original article. They can only use the Simple English Wikipedia to search for it (i.e. its search functions, categories, internal hyperlinks, etc…). They cannot i.e. search in Google, because it's not part of the Simple English Wikipedia.
+Receivers can ask the Source if their guess is correct by sending the url of their guess to the Source. The Source answers privately. If it's not correct, the Source gives an indication of how close they are like in the "hot and cold" guessing game.
+After 5 minutes the answer is revealed, and we proceed to the scoring phase.
+Scoring
+Suppose N Receivers are in the game.
+The first Receiver to guess correctly scores N points.
+Other Receivers scores N - M points, where M is how many Receivers were faster than them.
+I.e. in a game of 5 players, there's 1 Source and 4 Receivers. The fastest Receiver scores 4 points. The second fastest Receiver scores 3 points. The third fastest scores 2 points. And so on.
+If at least one Receiver guessed correctly and one Receiver did not, the Source scores 3 points, regardless of how many players are in the game. Otherwise, the Source does not score.
+Endgame
+End the game after everyone has been the Source once. The one with the most points wins!
+
+
+Transmission Failure (scrapped design)
+Introduction
+Similar to "Simple Engrish Wikipedia", but with progressive garbling up of the text across players.
+Game Manual
+Setup
+Gather 3 players, each with its own screen (computer, mobile device, etc…).
+Assign to each player one of these "recipes":
+English -> Arabic -> Yoruba -> English
+English -> Igbo -> Swahili -> English
+English -> Chichewa -> Korean -> English
+Players will take rounds being the Source, the Link and the Receiver.
+Guessing
+The Source chooses a Simple English Wikipedia article, and garbles it with its own "recipe" by successively translating it in Google Translate.
+This can be done easily by opening 3 tabs in a browser with each translation configured, then copy and pasting the text successively.
+The Source sends the garbled text to the Link.
+The Link repeats the procedure with its own recipe and sends to the Receiver.
+Both the Link and the Receiver have to find the original article. They have 5 minutes to do so.
+The Link and the Receiver can ask the Source if their guess is correct by sending the url of their guess to the Source. The Source answers privately. If it's not correct, the Source gives an indication of how close they are like in the "hot and cold" guessing game.
+After 5 minutes the answer is revealed, and we proceed to the scoring phase.
+Scoring
+The Source scores 1 point if one, and only one of the other two players guessed correctly during the 5 minutes.
+The Link scores 1 point if they guessed correctly and the Receiver did not.
+If the Receiver scores 2 points for guessing correctly and they also score 1 point if the Link did not.
+Endgame
+End the game after everyone has been the Source once. The one with the most points wins!
