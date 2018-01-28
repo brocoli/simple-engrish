@@ -1,6 +1,10 @@
 
 import {Application, utils} from "pixi.js"  // also brings PIXI into the global scope
-import Maestro from "./control/maestro.js"
+
+import Bus from "control/bus.js"
+import Maestro from "control/maestro.js"
+
+
 
 let type = "WebGL"
 if(!utils.isWebGLSupported()) {
@@ -18,4 +22,12 @@ app.view.style.position = "absolute"
 screen.appendChild(app.view)
 
 
-export let maestro = new Maestro(app, screen)
+let maestro = new Maestro(app, screen, new Bus())
+
+export function getMaestro() {
+	return maestro
+}
+
+
+
+maestro.start()

@@ -1,42 +1,29 @@
 
-import Bus from "engine/bus.js"
+import AppStateMachine from "control/appStateMachine.js"
+import Bus from "control/bus.js"
+
+import SourceArticleInputView from "interface/views/sourceArticleInputView.js"
+
 
 
 export default class Maestro {
-    constructor(app, screen) {
+    constructor(app, screen, bus) {
         this.app = app
-        this.view = app.view
+        this.stage = app.stage
         this.screen = screen
+        this.bus = bus
 
-        // let textArea = document.createElement("textarea")
-        // textArea.style.resize = "none"
-        // textArea.style.position = "absolute"
-        // textArea.style["z-index"] = 1
-        // textArea.style.top = "100px"
-        // textArea.style.left = "100px"
-        // textArea.style.width = "300px"
-        // textArea.style.height = "80px"
-        // textArea.style.margin = "0px"
-        // textArea.style.padding = "0px"
-        // let textNode = document.createTextNode("Test.\ntest.")
-        // textArea.appendChild(textNode)
-        // screen.appendChild(textArea)
+        this.appStateMachine = new AppStateMachine()
 
-        this.bus = new Bus()
-        this.bus.subscribe(this, {"myDude": this.myDude})
-        this.bus.subscribe(this, {"myDude/myGal": this.myGal})
-        this.bus.post("myDude", "something!?")
-        this.bus.post("myDude/myGal", "something!!!")
-        this.bus.unsubscribe(this, {"myDude": this.myDude})
-        this.bus.post("myDude", "something...")
-        this.bus.post("myDude/myGal", "something???")
+        this.components = {
+            sourceArticleInputView: new SourceArticleInputView(),
+        }
     }
 
-    myDude(signal, something) {
-        console.log("myDude called. " + signal + " " + something)
-    }
+    start() {
+        this.components.sourceArticleInputView.start()
 
-    myGal(signal, something) {
-        console.log("myGal called. " + signal + " " + something)
+        // effectively start the application
+        this.appStateMachine.start(this)
     }
 }
