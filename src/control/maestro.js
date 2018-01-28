@@ -21,9 +21,7 @@ export default class Maestro {
     }
 
     start() {
-        this.components.sourceArticleInputView.start()
-
         // effectively start the application
-        this.appStateMachine.start(this)
+        this.appStateMachine.bootstrap(this)
     }
 }

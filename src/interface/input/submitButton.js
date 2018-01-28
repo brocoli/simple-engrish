@@ -12,10 +12,13 @@ export default class SubmitButton extends Container {
         this.x = x
         this.y = y
 
-        this.bg = Sprite.from(Texture.WHITE.clone())
+        this.originalWidth = width
+        this.originalHeight = height
+
+        this.bg = Sprite.from(Texture.WHITE)
         this.bg.anchor.set(0.5)
-        this.bg.width = width
-        this.bg.height = height
+        this.bg.width = this.originalWidth
+        this.bg.height = this.originalHeight
         this.bg.tint = 0xFFFFFF
 
         this.interactive = true
@@ -33,7 +36,10 @@ export default class SubmitButton extends Container {
 
     onButtonDown() {
         if (this.isOver) {
-            this.bg.tint = 0xFF0000
+            this.bg.tint = 0x00FF00
+            this.bg.width = this.originalWidth * 0.95
+            this.bg.height = this.originalHeight * 0.95
+
             this.isDown = true
             this.shouldDownOnOver = true
         }
@@ -41,7 +47,9 @@ export default class SubmitButton extends Container {
 
     onButtonUp() {
         if (this.isDown) {
-            this.bg.tint = 0xFFCCCC
+            this.bg.tint = 0xCCFFCC
+            this.bg.width = this.originalWidth
+            this.bg.height = this.originalHeight
 
             let maestro = getMaestro()
             maestro.bus.post("app/interface/input/sourceArticleInputView/stopped")
@@ -53,16 +61,24 @@ export default class SubmitButton extends Container {
 
     onButtonOver() {
         if (this.shouldDownOnOver) {
-            this.bg.tint = 0xFF0000
+            this.bg.tint = 0x00FF00
+            this.bg.width = this.originalWidth * 0.95
+            this.bg.height = this.originalHeight * 0.95
+
             this.isDown = true
         } else {
-            this.bg.tint = 0xFFCCCC
+            this.bg.tint = 0xCCFFCC
+            this.bg.width = this.originalWidth
+            this.bg.height = this.originalHeight
         }
         this.isOver = true
     }
 
     onButtonOut() {
         this.bg.tint = 0xFFFFFF
+        this.bg.width = this.originalWidth
+        this.bg.height = this.originalHeight
+
         this.isDown = false
         this.isOver = false
     }

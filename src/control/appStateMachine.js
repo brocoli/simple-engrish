@@ -40,7 +40,7 @@ export default class AppStateMachine extends BehavioralFsm {
         })
 	}
 
-    start(maestro) {
+    bootstrap(maestro) {
         this.initialState = "sourceArticleInput"
         this.transition(maestro, this.initialState)
     }
