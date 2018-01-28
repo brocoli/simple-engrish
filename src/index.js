@@ -29,5 +29,5 @@ export function getMaestro() {
 }
 
 
-
+maestro.instantiateComponents()
 maestro.start()

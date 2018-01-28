@@ -22,17 +22,19 @@ export default class AppStateMachine extends BehavioralFsm {
                     _onEnter: function(maestro) {
                         console.log("AppStateMachine entering sourceArticleInput state...")
 
+                        maestro.components.sourceArticleInputInterpreter.start()
                         maestro.components.sourceArticleInputView.start()
 
-                        maestro.bus.post("app/appState/sourceArticleInput/entered")
+                        maestro.bus.publish("app/appState/sourceArticleInput/entered")
                         console.log("AppStateMachine entered sourceArticleInput state.")
                     },
                     _onExit: function(maestro) {
                         console.log("AppStateMachine leaving sourceArticleInput state...")
 
                         maestro.components.sourceArticleInputView.stop()
+                        maestro.components.sourceArticleInputInterpreter.stop()
 
-                        maestro.bus.post("app/appState/sourceArticleInput/exited")
+                        maestro.bus.publish("app/appState/sourceArticleInput/exited")
                         console.log("AppStateMachine left sourceArticleInput state.")
                     },
                 },

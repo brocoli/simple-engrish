@@ -40,7 +40,7 @@ export default class Bus {
         }
     }
 
-    post(tieredSignal) {
+    publish(tieredSignal) {
         let signalBits = tieredSignal.split("/")
 
         let signal = null

@@ -6,8 +6,10 @@ import {getMaestro} from "index.js"
 
 
 export default class SubmitButton extends Container {
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, submitSignal) {
         super()
+
+        this.submitSignal = submitSignal
 
         this.x = x
         this.y = y
@@ -52,7 +54,7 @@ export default class SubmitButton extends Container {
             this.bg.height = this.originalHeight
 
             let maestro = getMaestro()
-            maestro.bus.post("app/interface/input/sourceArticleInputView/stopped")
+            maestro.bus.publish(this.submitSignal)
 
             this.isDown = false
         }

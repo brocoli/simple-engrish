@@ -21,7 +21,7 @@ module.exports = {
         // node_modules/pixi.js directory, but the ability to load .json files
         // could be useful elsewhere in our app, so I usually don't.
         //include: path.resolve(__dirname, 'node_modules/pixi.js'),
-        loader: 'json',
+        loader: 'json-loader',
       },
     ],
   },
@@ -30,5 +30,11 @@ module.exports = {
       path.resolve(__dirname, "src"),
       "node_modules",
     ],
+  },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
   },
 }
